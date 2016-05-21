@@ -21,13 +21,17 @@ void loop() {
   
   int rightSide[] = {18, 19, 0, 1, 2, 3, 4, 6};
   int leftSide[] = {16, 15, 14, 13, 12, 11, 10, 7};
+  int revrightSide[] = {6, 4, 3, 2, 1, 0, 19, 18};
+  int revleftSide[] = {7, 10, 11, 12, 13, 14, 15, 16};
   int chest[] = {0, 19, 18, 17, 16, 15, 14, 13};
+  int revchest[] = {13, 14, 15, 16, 17, 18, 19, 0};
   int hips[] = {4, 5, 6, 7, 8, 9, 10, 11};
+  int revhips[] = {11, 10, 9, 8, 7, 6, 5, 4};
   //intro slow
-  runThroughEight(pixels.Color(127,127,200), 325, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 320, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 325, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 330, rightSide);
+  titularLyric(pixels.Color(127,127,200), 325, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 320, revleftSide, revrightSide);
+  titularLyric(pixels.Color(127,127,200), 325, revleftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 330, leftSide, revrightSide);
 
   //explodes, with small pulses between
   explode(pixels.Color(127,127,200), 750);
@@ -62,9 +66,9 @@ void loop() {
   int chickaRun2[] = {11, 12, 2, 0, 1, 13, 14, 15};
   int chickaRun3[] = {0, 16, 17, 19, 0, 17, 19, 18};
 
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun1);
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun2);
-  runThroughEight(pixels.Color(127,127,200), 30, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);
 
   // On until 0:50 
   explode(pixels.Color(127,127,200), 1650);  
@@ -76,33 +80,33 @@ void loop() {
 
   explode(pixels.Color(127,127,200), 1000);
   
-  runThroughEight(pixels.Color(127,127,200), 220, chest);
-  runThroughEight(pixels.Color(127,127,200), 250, hips);
+  titularLyric(pixels.Color(127,127,200), 220, chest, hips);
+  titularLyric(pixels.Color(127,127,200), 250, revhips, chest);
   
   explode(pixels.Color(127,127,200), 1000);
   ongoing(pixels.Color(127,127,200), 500);
   ongoing(pixels.Color(127,127,200), 500);
   explode(pixels.Color(127,127,200), 500);
   
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun1);
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun2);
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun3, chickaRun1);
   
   titularLyric(pixels.Color(127,127,200), 150, leftSide, rightSide);
   titularLyric(pixels.Color(127,127,200), 150, leftSide, rightSide);
   
-  runThroughEight(pixels.Color(127,127,200), 200, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 200, rightSide);
+  titularLyric(pixels.Color(127,127,200), 200, revleftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 200, revrightSide, leftSide);
   
-  titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
-  titularLyric(pixels.Color(127,127,200), 150, leftSide, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 100, chest);
-  runThroughEight(pixels.Color(127,127,200), 100, hips);
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun1);
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun2);
-  runThroughEight(pixels.Color(127,127,200), 100, chickaRun3);
-  runThroughEight(pixels.Color(127,127,200), 250, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 250, rightSide);
+  titularLyric(pixels.Color(127,127,200), 100, revleftSide, revrightSide);
+  titularLyric(pixels.Color(127,127,200), 150, revleftSide, revrightSide);
+  titularLyric(pixels.Color(127,127,200), 100, chest, hips);
+  titularLyric(pixels.Color(127,127,200), 100, revchest, revhips);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 100, chickaRun3, chickaRun1);
+  titularLyric(pixels.Color(127,127,200), 250, leftSide, revrightSide);
+  titularLyric(pixels.Color(127,127,200), 250, rightSide, revleftSide);
   explode(pixels.Color(127,127,200), 1000);
   delay(500);
   explode(pixels.Color(127,127,200), 1000);
@@ -115,21 +119,22 @@ void loop() {
   delay(1700);
   titularLyric(pixels.Color(127,127,200), 50, leftSide, rightSide);
   
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun1);
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun2);
-  runThroughEight(pixels.Color(127,127,200), 30, chickaRun3);
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun1);
-  runThroughEight(pixels.Color(127,127,200), 40, chickaRun2);
-  runThroughEight(pixels.Color(127,127,200), 30, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);
   explode(pixels.Color(127,127,200), 1650);  
 
+  //please won't you...
   ongoing(pixels.Color(127,127,200), 500);
   ongoing(pixels.Color(127,127,200), 500);
   ongoing(pixels.Color(127,127,200), 350);
   ongoing(pixels.Color(127,127,200), 350);
 
-  explode(pixels.Color(127,127,200), 3000);
-  delay(1000);
+  explode(pixels.Color(127,127,200), 2000);
+  delay(2000);
   titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
   titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
   explode(pixels.Color(127,127,200), 2000);
@@ -142,34 +147,137 @@ void loop() {
 
   titularLyric(pixels.Color(127,127,200), 200, leftSide, rightSide);
   titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 100, chest);
-  runThroughEight(pixels.Color(127,127,200), 100, hips);
-  runThroughEight(pixels.Color(127,127,200), 200, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 200, rightSide);
+  titularLyric(pixels.Color(127,127,200), 100, chest, revhips);
+  titularLyric(pixels.Color(127,127,200), 100, hips, revchest);
+  titularLyric(pixels.Color(127,127,200), 200, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 200, revleftSide, revrightSide);
   titularLyric(pixels.Color(127,127,200), 170, leftSide, rightSide);
 
   titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 100, chest);
-  runThroughEight(pixels.Color(127,127,200), 100, hips);
-  runThroughEight(pixels.Color(127,127,200), 200, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 200, rightSide);
+  titularLyric(pixels.Color(127,127,200), 100, chest, hips);
+  titularLyric(pixels.Color(127,127,200), 100, chest, hips);
+  titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 100, revleftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 200, rightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 200, revleftSide, rightSide);
   delay(500);
-  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
-  delay(1000);
+  titularLyric(pixels.Color(127,127,200), 200, leftSide, rightSide);
+  delay(550);
   
-  runThroughEight(pixels.Color(127,127,200), 25, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 25, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 25, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 25, leftSide);
-  explode(pixels.Color(127,127,200), 3000);
-  delay(1000);
+  titularLyric(pixels.Color(127,127,200), 65, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 70, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 70, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 70, revrightSide, leftSide);
+  explode(pixels.Color(127,127,200), 1500);
+  delay(830);
 
-  runThroughEight(pixels.Color(127,127,200), 25, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 25, leftSide);
-  runThroughEight(pixels.Color(127,127,200), 25, rightSide);
-  runThroughEight(pixels.Color(127,127,200), 25, leftSide);
+ titularLyric(pixels.Color(127,127,200), 70, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 70, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 75, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 75, revrightSide, leftSide);
+  explode(pixels.Color(127,127,200), 1500);
+  delay(800);
+
+  titularLyric(pixels.Color(127,127,200), 85, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 85, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 85, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 85, revrightSide, leftSide);
+  delay(500);
+  
+  titularLyric(pixels.Color(127,127,200), 85, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 85, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 85, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 85, revrightSide, leftSide);
+  delay(500);
+
+  titularLyric(pixels.Color(127,127,200), 75, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 75, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 75, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 75, revrightSide, leftSide);
   explode(pixels.Color(127,127,200), 3000);
+  delay(300);
+
+  //doubled up inside....
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 300, leftSide, rightSide);
+  
+
+  //breath....
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);;
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 40, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 30, chickaRun3, chickaRun1);
+  explode(pixels.Color(127,127,200), 6000);
+  
+
+  
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun3, chickaRun1);
+  titularLyric(pixels.Color(127,127,200), 100, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 100, revrightSide, leftSide);
+
+  titularLyric(pixels.Color(127,127,200), 170, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun1, chickaRun2);
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun2, chickaRun3);
+  titularLyric(pixels.Color(127,127,200), 90, chickaRun3, chickaRun1);
   delay(1000);
+  titularLyric(pixels.Color(127,127,200), 50, rightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 50, rightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 50, rightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 50, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 50, revleftSide, revrightSide);
+  titularLyric(pixels.Color(127,127,200), 50, leftSide, rightSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, leftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, revleftSide);
+  titularLyric(pixels.Color(127,127,200), 50, revrightSide, leftSide);
+  explode(pixels.Color(127,127,200), 8000);
+  theaterChase(pixels.Color(127,127,200), 77);
+  theaterChase(pixels.Color(127,127,200), 77);
+  theaterChase(pixels.Color(127,127,200), 50);
+  theaterChase(pixels.Color(127,127,200), 40);
+  explode(pixels.Color(127,127,200), 1500);
+  oneByOne(pixels.Color(127,127,200), 475);
+
+  delay(4000);
+  //bow
+  explode(pixels.Color(127,127,200), 3000);
+  theaterChase(pixels.Color(127,127,200), 77);
+  theaterChase(pixels.Color(127,127,200), 77);
+  explode(pixels.Color(127,127,200), 4000);
+  
+  
+}
+
+void theaterChase(uint32_t c, uint8_t wait) {
+  for (int j=0; j<10; j++) {  //do 10 cycles of chasing
+    for (int q=0; q < 3; q++) {
+      for (int i=0; i < pixels.numPixels(); i=i+3) {
+        pixels.setPixelColor(i+q, c);    //turn every third pixel on
+      }
+      pixels.show();
+
+      delay(wait);
+
+      for (int i=0; i < pixels.numPixels(); i=i+3) {
+        pixels.setPixelColor(i+q, 0);        //turn every third pixel off
+      }
+    }
+  }
 }
 
 void runThroughEight(uint32_t c, uint32_t wait, int runThru[] )
@@ -247,30 +355,43 @@ void ongoing(uint32_t c, uint32_t wait)
   pixels.show();
   delay(wait/2);
   pixels.setPixelColor(group[1], c);
+  pixels.setPixelColor(group[10], c);
   pixels.show();
   delay(wait/4);
   pixels.setPixelColor(group[2], c);
+  pixels.setPixelColor(group[11], c);
   pixels.show();
   delay(wait/2);
   pixels.setPixelColor(group[3], c);
+  pixels.setPixelColor(group[12], c);
   pixels.show();
   delay(wait/4);
   pixels.setPixelColor(group[4], c);
+  pixels.setPixelColor(group[13], c);
   pixels.show();
   delay(wait/2);
   pixels.setPixelColor(group[5], c);
+  pixels.setPixelColor(group[14], c);
+  pixels.setPixelColor(group[3], 0);
   pixels.show();
   delay(wait/4);
   pixels.setPixelColor(group[6], c);
+  pixels.setPixelColor(group[15], c);
+  pixels.setPixelColor(group[4], 0);
   pixels.show();
   delay(wait/2);
   pixels.setPixelColor(group[7], c);
+  pixels.setPixelColor(group[16], c);
+  pixels.setPixelColor(group[5], 0);
   pixels.show();
   delay(500);
   pixels.setPixelColor(group[8], c);
+  pixels.setPixelColor(group[17], c);
+  pixels.setPixelColor(group[6], 0);
   pixels.show();
   delay(wait/4);
   pixels.setPixelColor(group[9], c);
+  pixels.setPixelColor(group[18], c);
   pixels.setPixelColor(group[1], 0);
   pixels.show();
   delay(wait/2);
@@ -339,4 +460,22 @@ void titularLyric(uint32_t c, uint32_t wait, int group1[], int group2[])
   pixels.setPixelColor(group1[7], 0);
   pixels.setPixelColor(group2[7], 0);
   pixels.show(); 
+}
+
+void oneByOne(uint32_t c, uint32_t wait)
+{
+ for(int i = 0; i < NUMPIXELS; i++)
+  {
+    pixels.setPixelColor(i, c);
+  }
+  pixels.show();
+  delay(wait*4); 
+  for(int i = 0; i < NUMPIXELS; i++)
+  {
+    pixels.setPixelColor(i, 0);
+    delay(wait);
+    pixels.show();
+  }
+  
+  
 }
